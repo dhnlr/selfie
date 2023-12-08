@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import Measure from "react-measure";
 
-import { useUserMedia } from "../../hooks/use-user-media";
-import { useCardRatio } from "../../hooks/use-card-ratio";
-import { useOffsets } from "../../hooks/use-offsets";
+import { useUserMedia } from "@/hooks/use-user-media";
+import { useCardRatio } from "@/hooks/use-card-ratio";
+import { useOffsets } from "@/hooks/use-offsets";
 import {
   Video,
   Canvas,
@@ -23,13 +23,7 @@ const CAPTURE_OPTIONS = {
   video: { facingMode: "user" },
 };
 
-declare var Blob: {
-  prototype: Blob;
-  new (): Blob;
-  new (request: any, mime: string): Blob;
-}
-
-function Camera({ onCapture }: { onCapture: (blob: Blob | null) => void }) {
+function Camera() {
   const canvasRef = useRef<HTMLCanvasElement>();
   const videoRef = useRef<HTMLVideoElement>();
 
@@ -52,8 +46,6 @@ function Camera({ onCapture }: { onCapture: (blob: Blob | null) => void }) {
     if (mediaStream && videoRef?.current) {
       videoRef.current.srcObject = mediaStream;
     }
-    console.log(mediaStream, videoRef.current, videoRef.current?.srcObject)
-
   }, [mediaStream, videoRef?.current])
 
   function handleResize(contentRect: any) {
@@ -90,7 +82,7 @@ function Camera({ onCapture }: { onCapture: (blob: Blob | null) => void }) {
       container.height
     );
 
-    canvasRef.current?.toBlob((blob) => onCapture(blob), "image/jpeg", 1);
+    canvasRef.current?.toBlob(()=>{},"image/jpeg", 1);
     setIsCanvasEmpty(false);
     setIsFlashing(true);
   }
@@ -161,6 +153,7 @@ function Camera({ onCapture }: { onCapture: (blob: Blob | null) => void }) {
                   autoPlay
                   playsInline
                   muted
+                  disablePictureInPicture 
                   style={{
                     top: `-${offsets.y}px`,
                     left: `-${offsets.x}px`,

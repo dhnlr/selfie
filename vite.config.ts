@@ -6,9 +6,9 @@ const manifest: Partial<VitePWAOptions> = {
 	registerType: "prompt",
 	includeAssets: ["favicon.ico", "apple-touch-icon.png", "masked-icon.svg"],
 	manifest: {
-		name: "Telpon - DHNLR",
-		short_name: "Telpon",
-		description: "Telpon app for goto",
+		name: "Selfie - DHNLR",
+		short_name: "Selfie",
+		description: "Selfie app",
 		icons: [
 			{
 				src: "/favicon.png",
@@ -44,18 +44,11 @@ const manifest: Partial<VitePWAOptions> = {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	esbuild: {
-		loader: "tsx",
-		include: [
-		  // Business as usual for .jsx and .tsx files
-		  "src/**/*.jsx",
-		  "src/**/*.tsx",
-		  "node_modules/**/*.jsx",
-		  "node_modules/**/*.tsx",
-		],
-	  },
   plugins: [
     react({ plugins: [["@swc/plugin-styled-components", {}]] }),
-    VitePWA(manifest),
+    VitePWA(manifest)
   ],
+  resolve: {
+	alias: [{ find: '@', replacement: '/src' }],
+   },
 });

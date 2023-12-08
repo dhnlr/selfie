@@ -11,9 +11,9 @@ export const Main = styled.section`
   max-width: 800px;
   margin: 0 2em;
   padding: 1em 2em;
-  background-image: url(/grid.svg);
-
+  
   @media (max-width: 600px) {
+    background-image: url(/grid.svg);
     flex-flow: column;
   }
 `;
@@ -30,7 +30,7 @@ export const Copy = styled.div`
 
 export const Hero = styled.div`
   width: 100%;
-  max-width: 300px;
+  max-width: 368px;
   margin-bottom: 1em;
 
   @media (max-width: 600px) {
@@ -48,6 +48,7 @@ export const Title = styled.h1`
 export const Description = styled.p`
   font-size: 1.4em;
   margin: 0.75em 0;
+  text-wrap: balance;
 `;
 
 export const Button = styled.button`

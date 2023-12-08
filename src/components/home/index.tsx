@@ -1,6 +1,6 @@
 import { Copy, Main, Hero, Title, Description, Button } from "./style";
-import Footer from "../footer";
-import heroImg from "../../assets/hero.png";
+import Footer from "@/components/footer";
+import heroImg from "@/assets/hero.png";
 
 type HomeProps = {
   openCamera: ()=> void
@@ -15,7 +15,7 @@ function Home({ openCamera }: HomeProps) {
           <Button onClick={openCamera}>Get Started</Button>
         </Copy>
         <Hero>
-          <img src={heroImg} alt="selfie" width="300px" />
+          <img src={heroImg} alt="selfie" width="368px" />
         </Hero>
       </Main>
       <Footer />
