@@ -1,9 +1,8 @@
-# Telpon - DHNLR
+# Selfie - DHNLR
 
-Phone book application to save name and phone number
-
+Camera application to appreciate yourself as work of art
 ## Demo
-Visit [Telpon](https://telpon-dhnlr.vercel.app/)
+Visit [Selfie]('')
 
 ## Requirements (recommended)
 - node: `latest` or `lts`
