@@ -43,6 +43,7 @@ export const Title = styled.h1`
   font-weight: 700;
   margin: 0 0 0.2em;
   line-height: 1.4;
+  color: #e6b974;
 `;
 
 export const Description = styled.p`

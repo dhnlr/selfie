@@ -1,10 +1,10 @@
-import { Copy, Main, Hero, Title, Description, Button } from "./style";
 import Footer from "@/components/footer";
 import heroImg from "@/assets/hero.png";
+import { Copy, Main, Hero, Title, Description, Button } from "./style";
 
 type HomeProps = {
-  openCamera: ()=> void
-}
+  openCamera: () => void;
+};
 function Home({ openCamera }: HomeProps) {
   return (
     <>

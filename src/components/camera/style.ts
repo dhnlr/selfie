@@ -6,8 +6,8 @@ type DivProps = {
 };
 
 type EffectItemProps = {
-  selected?: boolean
-}
+  selected?: boolean;
+};
 
 const flashAnimation = keyframes`
   from {
@@ -23,6 +23,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-flow: column;
   align-items: center;
+  gap: 1.75em;
   width: 100%;
 `;
 
@@ -127,7 +128,8 @@ export const ActionItem = styled.button`
   width: 100px;
   height: 100px;
   padding: 12px 24px;
-  font-size: 3em;
+  font-size: 2em;
+  color: #6d9da6;
   cursor: pointer;
 `;
 

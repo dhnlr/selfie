@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Lobster&family=Onest&display=swap");
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Onest, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -29,8 +31,10 @@ body {
 }
 
 h1 {
+  font-family: Lobster, serif;
   font-size: 3.2em;
   line-height: 1.1;
+  color: #e6b974;
 }
 
 button {

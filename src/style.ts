@@ -48,7 +48,6 @@ export const Footer = styled.footer`
   justify-content: center;
   align-items: center;
   height: 50px;
-  // background: silver;
 
   button {
     margin: 0 10px;

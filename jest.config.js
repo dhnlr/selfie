@@ -12,6 +12,6 @@ module.exports = {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
     '^assets(.*)$': '<rootDir>/src/assets$1',
-    '^Component(.*)$': '<rootDir>/src/components$1',
+    '^component(.*)$': '<rootDir>/src/components$1',
   },
 };
