@@ -6,7 +6,7 @@ Camera application to appreciate yourself as work of art
 
 Visit [Selfie](https://selfie-five.vercel.app/)
 
-## Supported Library
+## Features
 
 - Take picture
 - Apply filter (blur, sepia, and grayscale)
