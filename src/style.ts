@@ -31,7 +31,7 @@ export const Root = styled.main`
   text-align: center;
   overflow-x: hidden;
   overflow-y: hidden;
-  min-height: 100vh;
+  min-height: 100svh;
 `;
 
 export const Preview = styled.img`

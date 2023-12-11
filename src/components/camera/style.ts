@@ -23,7 +23,6 @@ export const Wrapper = styled.div`
   display: flex;
   flex-flow: column;
   align-items: center;
-  gap: 1.75em;
   width: 100%;
 `;
 

@@ -160,7 +160,6 @@ function Camera() {
                   autoPlay
                   playsInline
                   muted
-                  disablePictureInPicture
                   style={{
                     top: `-${offsets.y}px`,
                     left: `-${offsets.x}px`,
