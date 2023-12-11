@@ -46,7 +46,7 @@ const manifest: Partial<VitePWAOptions> = {
 export default defineConfig({
   plugins: [
     react({ plugins: [["@swc/plugin-styled-components", {}]] }),
-    VitePWA(manifest),
+    // VitePWA(manifest),
   ],
   resolve: {
     alias: [{ find: "@", replacement: "/src" }],
