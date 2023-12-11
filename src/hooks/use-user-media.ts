@@ -7,23 +7,31 @@ export function useUserMedia(requestedMedia: MediaStreamConstraints) {
   useEffect(() => {
     async function enableVideoStream() {
       try {
-        const stream = await navigator.mediaDevices.getUserMedia(
-          requestedMedia
-        );
-        setMediaStream(stream);
-      } catch (err: any) {
-        if (
-          err?.name === "NotAllowedError" ||
-          err?.name === "PermissionDeniedError"
-        ) {
-          setMediaError(
-            "Permission denied. Please refresh and give camera permission."
+        if (navigator?.mediaDevices?.getUserMedia) {
+          const stream = await navigator.mediaDevices.getUserMedia(
+            requestedMedia
           );
+          setMediaStream(stream);
         } else {
-          setMediaError(
-            "No camera accessible. Please connect your camera or try different browser."
-          );
+          const getUserMedia =
+            navigator.getUserMedia ||
+            navigator.webkitGetUserMedia ||
+            navigator.mozGetUserMedia ||
+            navigator.msGetUserMedia;
+          if (getUserMedia) {
+            getUserMedia(
+              requestedMedia,
+              (stream) => {
+                setMediaStream(stream);
+              },
+              (err) => {
+                handleError(err);
+              }
+            );
+          }
         }
+      } catch (err: any) {
+        handleError(err);
       }
     }
 
@@ -37,6 +45,21 @@ export function useUserMedia(requestedMedia: MediaStreamConstraints) {
       };
     }
   }, [mediaStream, requestedMedia]);
+
+  const handleError = (err: any) => {
+    if (
+      err?.name === "NotAllowedError" ||
+      err?.name === "PermissionDeniedError"
+    ) {
+      setMediaError(
+        "Permission denied. Please refresh and give camera permission."
+      );
+    } else {
+      setMediaError(
+        "No camera accessible. Please connect your camera or try different browser."
+      );
+    }
+  };
 
   return { mediaStream, mediaError };
 }
