@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import Measure from "react-measure";
+import 'context-filter-polyfill';
 
 import { useUserMedia } from "@/hooks/use-user-media";
 import { useCardRatio } from "@/hooks/use-card-ratio";
