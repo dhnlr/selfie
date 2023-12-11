@@ -3,12 +3,12 @@
     "target": "ES6",
     "useDefineForClassFields": true,
     "lib": ["ES6", "DOM", "DOM.Iterable"],
-    "module": "CommonJS",
+    "module": "ESNext",
     "skipLibCheck": true,
     "paths": { "@/*": ["./src/*"] },
 
     /* Bundler mode */
-    // "moduleResolution": "bundler",
+    "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
